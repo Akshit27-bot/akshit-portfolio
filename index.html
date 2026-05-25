@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Akshit Tyagi — UI & Graphic Designer</title>
+<meta name="description" content="Creative UI & Graphic Designer with real-world experience in Shopify website builds, motion graphics, branding, and digital creatives."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,wght@0,700;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#09090B;--bg2:#111116;--bg3:#18181F;--bg4:#1E1E28;
+  --acc:#7C6EF8;--acc2:#F7B731;--acc3:#2ECC71;--acc4:#E84393;
+  --txt:#EEEDF5;--muted:#6B6A7D;--soft:#A9A8BC;
+  --border:rgba(124,110,248,0.14);
+  --ff:'Outfit',sans-serif;--fd:'Fraunces',serif;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--txt);font-family:var(--ff);font-size:15px;line-height:1.6;}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--acc);border-radius:3px;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:rgba(9,9,11,0.85);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(238,237,245,0.06);}
+.nav-logo{font-size:13px;font-weight:700;letter-spacing:0.14em;color:var(--acc);text-transform:uppercase;text-decoration:none;}
+.nav-links{display:flex;gap:2rem;}
+.nav-links a{font-size:12px;color:var(--muted);text-decoration:none;letter-spacing:0.04em;transition:color 0.2s;}
+.nav-links a:hover{color:var(--txt);}
+.nav-hire{background:var(--acc);color:#fff;border:none;border-radius:7px;padding:7px 16px;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--ff);text-decoration:none;}
+.nav-hire:hover{opacity:0.85;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+.hamburger span{width:22px;height:1.5px;background:var(--txt);display:block;transition:all 0.3s;}
+
+/* WRAPPER */
+.wrap{max-width:900px;margin:0 auto;padding:7rem 2rem 5rem;}
+
+/* HERO */
+.hero{min-height:90vh;display:flex;flex-direction:column;justify-content:center;padding:3rem 0 4rem;}
+.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:1.2rem;}
+.eline{width:32px;height:1.5px;background:var(--acc);}
+.etxt{font-size:11px;letter-spacing:0.22em;color:var(--acc);text-transform:uppercase;font-weight:600;}
+.hero-name{font-family:var(--fd);font-size:clamp(52px,8vw,90px);font-weight:700;line-height:1.0;margin-bottom:8px;}
+.hero-name em{font-style:italic;color:var(--acc);}
+.hero-title{font-size:15px;color:var(--soft);margin-bottom:4px;font-weight:500;letter-spacing:0.03em;}
+.hero-loc{font-size:12px;color:var(--muted);margin-bottom:1.8rem;}
+.avail{display:inline-flex;align-items:center;gap:8px;background:rgba(46,204,113,0.07);border:0.5px solid rgba(46,204,113,0.2);border-radius:100px;padding:5px 16px;font-size:11px;color:var(--acc3);margin-bottom:1.8rem;font-weight:500;width:fit-content;}
+.avail-dot{width:7px;height:7px;border-radius:50%;background:var(--acc3);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero-bio{font-size:15px;color:var(--soft);line-height:1.9;max-width:580px;margin-bottom:2rem;}
+.contact-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2rem;}
+.contact-chip{display:flex;align-items:center;gap:7px;background:var(--bg3);border:0.5px solid rgba(238,237,245,0.08);border-radius:9px;padding:7px 14px;font-size:12px;color:var(--soft);text-decoration:none;transition:border-color 0.2s;}
+.contact-chip:hover{border-color:var(--acc);color:var(--txt);}
+.contact-chip i{color:var(--acc);font-size:13px;}
+.hero-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:2rem;}
+.tag{border:0.5px solid rgba(124,110,248,0.22);background:rgba(124,110,248,0.07);border-radius:7px;padding:5px 13px;font-size:11px;color:var(--acc);font-weight:600;letter-spacing:0.04em;}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-p{background:var(--acc);color:#fff;border:none;border-radius:9px;padding:11px 24px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--ff);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:opacity 0.2s;}
+.btn-p:hover{opacity:0.85;}
+.btn-g{background:transparent;color:var(--txt);border:0.5px solid rgba(238,237,245,0.15);border-radius:9px;padding:11px 24px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--ff);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:border-color 0.2s;}
+.btn-g:hover{border-color:var(--acc);}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:5rem;}
+.stat{background:var(--bg3);border:0.5px solid rgba(238,237,245,0.06);border-radius:14px;padding:1.3rem 1rem;text-align:center;transition:border-color 0.2s;}
+.stat:hover{border-color:var(--acc);}
+.stat-n{font-family:var(--fd);font-size:30px;font-weight:700;color:var(--acc);line-height:1;}
+.stat-l{font-size:10px;color:var(--muted);margin-top:6px;letter-spacing:0.08em;text-transform:uppercase;}
+
+/* SECTION */
+.section{margin-bottom:5rem;}
+.sh{margin-bottom:1.75rem;}
+.sh-lbl{font-size:10px;letter-spacing:0.22em;color:var(--acc);font-weight:700;text-transform:uppercase;margin-bottom:6px;}
+.sh-title{font-family:var(--fd);font-size:28px;font-weight:700;}
+
+/* EXPERIENCE */
+.exp-card{background:var(--bg3);border:0.5px solid rgba(238,237,245,0.06);border-radius:16px;padding:1.5rem 1.75rem;margin-bottom:12px;position:relative;overflow:hidden;transition:border-color 0.2s,transform 0.2s;}
+.exp-card:hover{border-color:var(--acc);transform:translateX(4px);}
+.exp-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:2px 0 0 2px;}
+.ec1::before{background:var(--acc);}
+.ec2::before{background:var(--acc2);}
+.ec3::before{background:var(--acc4);}
+.exp-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.75rem;gap:10px;}
+.exp-role{font-size:16px;font-weight:700;margin-bottom:3px;}
+.exp-co{font-size:12px;font-weight:600;margin-bottom:2px;}
+.ec1 .exp-co{color:var(--acc);}
+.ec2 .exp-co{color:var(--acc2);}
+.ec3 .exp-co{color:var(--acc4);}
+.exp-loc{font-size:11px;color:var(--muted);}
+.exp-badge{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0;}
+.badge-type{font-size:10px;border-radius:100px;padding:3px 11px;font-weight:600;white-space:nowrap;}
+.ft{background:rgba(124,110,248,0.12);color:var(--acc);border:0.5px solid rgba(124,110,248,0.25);}
+.intern{background:rgba(247,183,49,0.1);color:var(--acc2);border:0.5px solid rgba(247,183,49,0.22);}
+.exp-date{font-size:10px;color:var(--muted);}
+.exp-pts{margin-top:0.9rem;display:flex;flex-direction:column;gap:6px;}
+.exp-pt{font-size:12px;color:var(--soft);line-height:1.65;padding-left:14px;position:relative;}
+.exp-pt::before{content:'→';position:absolute;left:0;color:var(--acc);font-size:10px;top:1px;}
+
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.proj-card{background:var(--bg3);border:0.5px solid rgba(238,237,245,0.06);border-radius:16px;overflow:hidden;cursor:pointer;transition:border-color 0.25s,transform 0.2s;}
+.proj-card:hover{border-color:var(--acc);transform:translateY(-4px);}
+.proj-card.wide{grid-column:1/-1;}
+.proj-thumb{height:140px;display:flex;align-items:center;justify-content:center;padding:1.25rem;position:relative;overflow:hidden;}
+.t1{background:linear-gradient(135deg,#0d0820 0%,#1a1040 100%);}
+.t2{background:linear-gradient(135deg,#0a1500 0%,#162500 100%);}
+.t3{background:linear-gradient(135deg,#200010 0%,#3d0025 100%);}
+.proj-lbl{position:absolute;top:12px;right:12px;font-size:10px;border-radius:100px;padding:3px 12px;font-weight:600;}
+.l1{background:rgba(124,110,248,0.15);color:#9b90fa;border:0.5px solid rgba(124,110,248,0.3);}
+.l2{background:rgba(46,204,113,0.12);color:#2ECC71;border:0.5px solid rgba(46,204,113,0.25);}
+.l3{background:rgba(232,67,147,0.12);color:#E84393;border:0.5px solid rgba(232,67,147,0.25);}
+.proj-body{padding:1.1rem 1.25rem;}
+.proj-title{font-size:14px;font-weight:700;margin-bottom:4px;}
+.proj-sub{font-size:11px;color:var(--muted);margin-bottom:10px;}
+.proj-pills{display:flex;gap:6px;flex-wrap:wrap;}
+.pp{font-size:10px;background:rgba(238,237,245,0.05);border:0.5px solid rgba(238,237,245,0.08);border-radius:5px;padding:3px 10px;color:var(--muted);}
+
+/* mock elements */
+.shop-mock{display:flex;flex-direction:column;gap:7px;width:180px;}
+.sm-nav{height:16px;background:rgba(124,110,248,0.15);border-radius:5px;width:100%;margin-bottom:4px;}
+.sm-hero-img{height:44px;background:rgba(124,110,248,0.1);border-radius:6px;width:100%;}
+.sm-bar{height:8px;border-radius:4px;background:rgba(124,110,248,0.2);}
+.sm-bar.w100{width:100%;}
+.sm-bar.w70{width:70%;}
+.sm-bar.w50{width:50%;}
+.motion-mock{display:flex;gap:10px;align-items:center;}
+.m-circle{border-radius:50%;border:2.5px solid;}
+.m-c1{width:52px;height:52px;border-color:rgba(232,67,147,0.6);animation:spin 3s linear infinite;}
+.m-c2{width:36px;height:36px;border-color:rgba(247,183,49,0.6);animation:spin 2s linear infinite reverse;}
+.m-c3{width:22px;height:22px;border-color:rgba(124,110,248,0.7);animation:spin 1.5s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.skill-cat{background:var(--bg3);border:0.5px solid rgba(238,237,245,0.06);border-radius:14px;padding:1.25rem;}
+.skill-cat-title{font-size:12px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.skill-cat-title span{font-size:18px;}
+.skill-item{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.skill-name{font-size:12px;color:var(--soft);}
+.skill-dots{display:flex;gap:4px;}
+.dot{width:8px;height:8px;border-radius:50%;}
+.dot.on-p{background:var(--acc);}
+.dot.on-y{background:var(--acc2);}
+.dot.on-g{background:var(--acc3);}
+.dot.on-pk{background:var(--acc4);}
+.dot.off{background:rgba(238,237,245,0.1);}
+
+/* EDUCATION */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.edu-card{background:var(--bg3);border:0.5px solid rgba(238,237,245,0.06);border-radius:14px;padding:1.25rem 1.4rem;transition:border-color 0.2s;}
+.edu-card:hover{border-color:var(--acc);}
+.edu-icon{font-size:22px;margin-bottom:10px;}
+.edu-deg{font-size:13px;font-weight:700;margin-bottom:4px;}
+.edu-inst{font-size:12px;color:var(--acc);font-weight:500;margin-bottom:3px;}
+.edu-year{font-size:11px;color:var(--muted);}
+
+/* STRENGTHS */
+.str-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.str-card{background:var(--bg3);border:0.5px solid rgba(238,237,245,0.06);border-radius:12px;padding:1.1rem;text-align:center;transition:border-color 0.2s,transform 0.2s;}
+.str-card:hover{border-color:var(--acc);transform:translateY(-2px);}
+.str-icon{font-size:24px;margin-bottom:8px;}
+.str-txt{font-size:11px;color:var(--soft);line-height:1.55;font-weight:500;}
+
+/* CONTACT FOOTER */
+.contact-footer{background:var(--bg2);border:0.5px solid rgba(124,110,248,0.2);border-radius:20px;padding:3rem 2rem;text-align:center;margin-bottom:2rem;}
+.cf-title{font-family:var(--fd);font-size:32px;font-weight:700;margin-bottom:8px;}
+.cf-sub{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:0.5rem;}
+.cf-email{font-size:14px;color:var(--soft);margin-bottom:2rem;font-weight:500;}
+.cf-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+.cf-btn{background:transparent;border:0.5px solid rgba(124,110,248,0.22);border-radius:9px;padding:9px 20px;font-size:12px;color:var(--acc);cursor:pointer;font-family:var(--ff);text-decoration:none;display:inline-block;transition:background 0.2s;}
+.cf-btn:hover{background:rgba(124,110,248,0.1);}
+
+.divider{height:0.5px;background:rgba(238,237,245,0.05);margin:3rem 0;}
+
+/* FOOTER */
+footer{text-align:center;padding:2rem;font-size:11px;color:var(--muted);}
+
+/* FADE IN ANIMATION */
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:1rem 1.25rem;}
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .wrap{padding:5rem 1.25rem 3rem;}
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .proj-grid{grid-template-columns:1fr;}
+  .proj-card.wide{grid-column:1;}
+  .skills-grid{grid-template-columns:1fr;}
+  .edu-grid{grid-template-columns:1fr;}
+  .str-grid{grid-template-columns:repeat(2,1fr);}
+  .hero-name{font-size:clamp(42px,10vw,70px);}
+  .exp-head{flex-direction:column;gap:8px;}
+  .exp-badge{align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">AT · Portfolio</a>
+  <div class="nav-links">
+    <a href="#experience">Work</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="nav-hire" href="mailto:tyagiakshit003@gmail.com">Hire Me</a>
+  <button class="hamburger" onclick="document.querySelector('.nav-links').style.display='flex';document.querySelector('.nav-links').style.flexDirection='column';document.querySelector('.nav-links').style.position='fixed';document.querySelector('.nav-links').style.top='60px';document.querySelector('.nav-links').style.left='0';document.querySelector('.nav-links').style.right='0';document.querySelector('.nav-links').style.background='rgba(9,9,11,0.97)';document.querySelector('.nav-links').style.padding='1.5rem 2rem';document.querySelector('.nav-links').style.borderBottom='0.5px solid rgba(238,237,245,0.08)';" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero fade-in">
+    <div class="eyebrow"><div class="eline"></div><span class="etxt">UI · Graphic · Motion Designer</span></div>
+    <h1 class="hero-name">Akshit <em>Tyagi</em></h1>
+    <div class="hero-title">UI Designer | Graphic & Motion Designer</div>
+    <div class="hero-loc">📍 Greater Noida, India</div>
+    <div class="avail"><span class="avail-dot"></span>Currently Employed · Open to Opportunities</div>
+    <p class="hero-bio">Creative UI & Graphic Designer with real-world experience in Shopify website builds, motion graphics, branding, and digital creatives. I translate business needs into engaging visual designs and user-centered digital experiences.</p>
+    <div class="contact-row">
+      <a class="contact-chip" href="tel:+918287279346"><i class="fa-solid fa-phone"></i>+91-8287279346</a>
+      <a class="contact-chip" href="mailto:tyagiakshit003@gmail.com"><i class="fa-solid fa-envelope"></i>tyagiakshit003@gmail.com</a>
+      <a class="contact-chip" href="https://www.behance.net/Akshittyagii" target="_blank"><i class="fa-brands fa-behance"></i>Behance</a>
+      <a class="contact-chip" href="https://www.linkedin.com/in/akshit-tyagi-703350283" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+    </div>
+    <div class="hero-tags">
+      <span class="tag">Figma</span><span class="tag">Shopify</span><span class="tag">After Effects</span>
+      <span class="tag">Photoshop</span><span class="tag">Illustrator</span><span class="tag">Motion Graphics</span>
+      <span class="tag">Branding</span><span class="tag">UI/UX</span><span class="tag">Social Media</span>
+    </div>
+    <div class="cta-row">
+      <a class="btn-p" href="https://www.behance.net/Akshittyagii" target="_blank"><i class="fa-brands fa-behance"></i>View Behance</a>
+      <a class="btn-g" href="mailto:tyagiakshit003@gmail.com"><i class="fa-solid fa-paper-plane"></i>Contact Me</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats fade-in">
+    <div class="stat"><div class="stat-n">3</div><div class="stat-l">Companies</div></div>
+    <div class="stat"><div class="stat-n">1yr+</div><div class="stat-l">Experience</div></div>
+    <div class="stat"><div class="stat-n">5+</div><div class="stat-l">Live Projects</div></div>
+    <div class="stat"><div class="stat-n">573</div><div class="stat-l">Behance Views</div></div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <section class="section fade-in" id="experience">
+    <div class="sh"><div class="sh-lbl">Career</div><div class="sh-title">Work Experience</div></div>
+
+    <div class="exp-card ec1">
+      <div class="exp-head">
+        <div>
+          <div class="exp-role">UI & Graphic Designer</div>
+          <div class="exp-co">Ninton Technology</div>
+          <div class="exp-loc">Sahibabad, Ghaziabad</div>
+        </div>
+        <div class="exp-badge">
+          <span class="badge-type ft">Full Time</span>
+          <span class="exp-date">Nov 2024 – Present</span>
+        </div>
+      </div>
+      <div class="exp-pts">
+        <div class="exp-pt">Designed & developed Shopify e-commerce websites — EzyRefurb & Kodak India</div>
+        <div class="exp-pt">Created UI layouts, landing pages, banners, and product visuals</div>
+        <div class="exp-pt">Produced Kodak social media creatives and marketing graphics</div>
+        <div class="exp-pt">Collaborated with developers & marketing teams to maintain brand consistency</div>
+        <div class="exp-pt">Enhanced designs for better UX and conversion rates</div>
+      </div>
+    </div>
+
+    <div class="exp-card ec2">
+      <div class="exp-head">
+        <div>
+          <div class="exp-role">Motion & Graphic Designer</div>
+          <div class="exp-co">Agranik Food</div>
+          <div class="exp-loc">Remote</div>
+        </div>
+        <div class="exp-badge">
+          <span class="badge-type intern">Internship</span>
+          <span class="exp-date">Sep 2024 – Nov 2024</span>
+        </div>
+      </div>
+      <div class="exp-pts">
+        <div class="exp-pt">Designed motion graphics & animated visuals for promotional campaigns</div>
+        <div class="exp-pt">Created social media content, product visuals, and reels</div>
+        <div class="exp-pt">Edited and animated videos for digital advertising</div>
+        <div class="exp-pt">Strengthened visual storytelling for brand communication</div>
+      </div>
+    </div>
+
+    <div class="exp-card ec3">
+      <div class="exp-head">
+        <div>
+          <div class="exp-role">Video Editor & Graphic Designer</div>
+          <div class="exp-co">iPAM – The Performing Arts Platform</div>
+          <div class="exp-loc">Remote</div>
+        </div>
+        <div class="exp-badge">
+          <span class="badge-type intern">Internship</span>
+          <span class="exp-date">Jul 2024 – Sep 2024</span>
+        </div>
+      </div>
+      <div class="exp-pts">
+        <div class="exp-pt">Designed motion graphics and animated visuals for performing arts promotions</div>
+        <div class="exp-pt">Created social media content, reels, and event visuals</div>
+        <div class="exp-pt">Edited and animated videos for social advertising campaigns</div>
+        <div class="exp-pt">Contributed to brand visual storytelling for arts platform</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section fade-in" id="projects">
+    <div class="sh"><div class="sh-lbl">Selected Work</div><div class="sh-title">Highlighted Projects</div></div>
+    <div class="proj-grid">
+
+      <div class="proj-card wide">
+        <div class="proj-thumb t1" style="height:160px;">
+          <div class="shop-mock">
+            <div class="sm-nav"></div>
+            <div class="sm-hero-img"></div>
+            <div class="sm-bar w100"></div>
+            <div class="sm-bar w70"></div>
+            <div class="sm-bar w50"></div>
+          </div>
+          <span class="proj-lbl l1">Shopify · UI Design</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">EzyRefurb & Kodak India — Shopify Websites</div>
+          <div class="proj-sub">Full UI, banners, product pages, customer funnels & visual design system · Ninton Technology</div>
+          <div class="proj-pills">
+            <span class="pp">Figma</span><span class="pp">Shopify</span><span class="pp">Photoshop</span><span class="pp">UI Design</span><span class="pp">E-Commerce</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-thumb t3">
+          <div class="motion-mock">
+            <div class="m-circle m-c1"></div>
+            <div class="m-circle m-c2"></div>
+            <div class="m-circle m-c3"></div>
+          </div>
+          <span class="proj-lbl l3">Motion Graphics</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Motion & Brand Creatives</div>
+          <div class="proj-sub">Animated videos & social content · Agranik Food & Kodak India</div>
+          <div class="proj-pills">
+            <span class="pp">After Effects</span><span class="pp">Premiere Pro</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-thumb t2">
+          <div style="display:flex;flex-direction:column;gap:7px;width:140px;">
+            <div style="height:11px;background:rgba(46,204,113,0.3);border-radius:4px;width:80%;"></div>
+            <div style="height:11px;background:rgba(46,204,113,0.2);border-radius:4px;width:100%;"></div>
+            <div style="height:11px;background:rgba(46,204,113,0.15);border-radius:4px;width:60%;"></div>
+            <div style="display:flex;gap:7px;margin-top:6px;">
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(46,204,113,0.25);"></div>
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(124,110,248,0.25);"></div>
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(247,183,49,0.25);"></div>
+            </div>
+          </div>
+          <span class="proj-lbl l2">Branding</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Social Media & Brand Creatives</div>
+          <div class="proj-sub">Posts, reels, stories & ad creatives</div>
+          <div class="proj-pills">
+            <span class="pp">Photoshop</span><span class="pp">Illustrator</span><span class="pp">InDesign</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section fade-in" id="skills">
+    <div class="sh"><div class="sh-lbl">Toolkit</div><div class="sh-title">Technical Skills</div></div>
+    <div class="skills-grid">
+      <div class="skill-cat">
+        <div class="skill-cat-title"><span>🖥️</span>UI / UX Design</div>
+        <div class="skill-item"><span class="skill-name">Figma</span><div class="skill-dots"><div class="dot on-p"></div><div class="dot on-p"></div><div class="dot on-p"></div><div class="dot on-p"></div><div class="dot on-p"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Adobe XD</span><div class="skill-dots"><div class="dot on-p"></div><div class="dot on-p"></div><div class="dot on-p"></div><div class="dot on-p"></div><div class="dot off"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Sketch</span><div class="skill-dots"><div class="dot on-p"></div><div class="dot on-p"></div><div class="dot on-p"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+        <div class="skill-item"><span class="skill-name">VS Code</span><div class="skill-dots"><div class="dot on-p"></div><div class="dot on-p"></div><div class="dot on-p"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title"><span>🎨</span>Graphic Design</div>
+        <div class="skill-item"><span class="skill-name">Adobe Photoshop</span><div class="skill-dots"><div class="dot on-y"></div><div class="dot on-y"></div><div class="dot on-y"></div><div class="dot on-y"></div><div class="dot on-y"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Adobe Illustrator</span><div class="skill-dots"><div class="dot on-y"></div><div class="dot on-y"></div><div class="dot on-y"></div><div class="dot on-y"></div><div class="dot off"></div></div></div>
+        <div class="skill-item"><span class="skill-name">CorelDRAW</span><div class="skill-dots"><div class="dot on-y"></div><div class="dot on-y"></div><div class="dot on-y"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Affinity Designer</span><div class="skill-dots"><div class="dot on-y"></div><div class="dot on-y"></div><div class="dot on-y"></div><div class="dot off"></div><div class="dot off"></div></div></div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title"><span>🎬</span>Motion & Video</div>
+        <div class="skill-item"><span class="skill-name">Adobe After Effects</span><div class="skill-dots"><div class="dot on-pk"></div><div class="dot on-pk"></div><div class="dot on-pk"></div><div class="dot on-pk"></div><div class="dot off"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Adobe Premiere Pro</span><div class="skill-dots"><div class="dot on-pk"></div><div class="dot on-pk"></div><div class="dot on-pk"></div><div class="dot on-pk"></div><div class="dot off"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Video Editing</span><div class="skill-dots"><div class="dot on-pk"></div><div class="dot on-pk"></div><div class="dot on-pk"></div><div class="dot on-pk"></div><div class="dot off"></div></div></div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title"><span>🛒</span>Web & E-Commerce</div>
+        <div class="skill-item"><span class="skill-name">Shopify Design</span><div class="skill-dots"><div class="dot on-g"></div><div class="dot on-g"></div><div class="dot on-g"></div><div class="dot on-g"></div><div class="dot on-g"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Landing Pages</span><div class="skill-dots"><div class="dot on-g"></div><div class="dot on-g"></div><div class="dot on-g"></div><div class="dot on-g"></div><div class="dot off"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Banners & Ads</span><div class="skill-dots"><div class="dot on-g"></div><div class="dot on-g"></div><div class="dot on-g"></div><div class="dot on-g"></div><div class="dot on-g"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Social Media Design</span><div class="skill-dots"><div class="dot on-g"></div><div class="dot on-g"></div><div class="dot on-g"></div><div class="dot on-g"></div><div class="dot off"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section fade-in" id="education">
+    <div class="sh"><div class="sh-lbl">Academics</div><div class="sh-title">Education</div></div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-icon">🎓</div>
+        <div class="edu-deg">Bachelor of Arts (BA)</div>
+        <div class="edu-inst">SOL, University of Delhi</div>
+        <div class="edu-year">Expected Graduation: 2026</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon">🖥️</div>
+        <div class="edu-deg">UI/UX Designing Course</div>
+        <div class="edu-inst">MAAC, Greater Noida</div>
+        <div class="edu-year">Completed: September 2024</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon">📘</div>
+        <div class="edu-deg">Class XII – CBSE</div>
+        <div class="edu-inst">G.B.S.S.S, Ghazipur, Delhi</div>
+        <div class="edu-year">2022</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon">📗</div>
+        <div class="edu-deg">Class X – CBSE</div>
+        <div class="edu-inst">G.B.S.S.S, Ghazipur, Delhi</div>
+        <div class="edu-year">2020</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRENGTHS -->
+  <section class="section fade-in">
+    <div class="sh"><div class="sh-lbl">About Me</div><div class="sh-title">Strengths</div></div>
+    <div class="str-grid">
+      <div class="str-card"><div class="str-icon">🎯</div><div class="str-txt">Creative & detail-oriented</div></div>
+      <div class="str-card"><div class="str-icon">⚡</div><div class="str-txt">Quick learner with modern tools</div></div>
+      <div class="str-card"><div class="str-icon">👁️</div><div class="str-txt">Excellent visual communication</div></div>
+      <div class="str-card"><div class="str-icon">🤝</div><div class="str-txt">Team-oriented approach</div></div>
+      <div class="str-card"><div class="str-icon">💼</div><div class="str-txt">Client-focused design mindset</div></div>
+      <div class="str-card"><div class="str-icon">🌐</div><div class="str-txt">English & Hindi fluent</div></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <section class="contact-footer fade-in" id="contact">
+    <div class="cf-title">Let's build something great</div>
+    <div class="cf-sub">Open for full-time roles, internships & freelance.<br>Greater Noida, India · Remote friendly · Available Now.</div>
+    <div class="cf-email">tyagiakshit003@gmail.com &nbsp;·&nbsp; +91-8287279346</div>
+    <div class="cf-links">
+      <a class="cf-btn" href="mailto:tyagiakshit003@gmail.com">✉ Email Me</a>
+      <a class="cf-btn" href="https://www.behance.net/Akshittyagii" target="_blank">Behance ↗</a>
+      <a class="cf-btn" href="https://www.linkedin.com/in/akshit-tyagi-703350283" target="_blank">LinkedIn ↗</a>
+      <a class="cf-btn" href="https://instagram.com/doodlesbyakshitt" target="_blank">@doodlesbyakshitt ↗</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>© 2025 Akshit Tyagi · Designed with ❤️</footer>
+
+<script>
+// Scroll fade-in
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});
+},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+// Close mobile menu on link click
+document.querySelectorAll('.nav-links a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    const nl=document.querySelector('.nav-links');
+    nl.style.display='none';
+  });
+});
+</script>
+</body>
+</html>
